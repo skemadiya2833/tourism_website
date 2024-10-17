@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Prata&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;1,600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Raleway", sans-serif;
+    scrollbar-width: none;
+  }
+}
+
+@keyframes outer-left {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes inner-left {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes image-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(94, 156, 94);
+  border-radius: 5px;
+}
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  html, body {
+    overflow-x: hidden;
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0%;
+  }
+  60% {
+    background-position: 180px;
+  }
+  100% {
+    background-position: 180px;
+  }
+}
+
+.shine-text {
+  background: linear-gradient(to right, #5aaa65 0%, rgb(77, 255, 77) 10%, #0c770c 20%);
+  background-size: 200%;
+  background-position: 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s infinite linear;
+}
+
+
+@keyframes move-up {
+  0% {
+    transform: translateY(10%);
+  }
+  50% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(10%);
+  }
+}
+
+@keyframes move-down {
+  0% {
+    transform: translateY(-10%);
+  }
+  50% {
+    transform: translateY(10%);
+  }
+  100% {
+    transform: translateY(-10%);
+  }
+}
+
+.animate-move-up {
+  animation: move-up 15s ease-in-out infinite;
+}
+
+.animate-move-down {
+  animation: move-down 15s ease-in-out infinite;
+}
+
+@media (min-width: 768px) {
+  .gallery__strip img {
+    height: 200px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery__strip img {
+    height: 300px;
+  }
+}
